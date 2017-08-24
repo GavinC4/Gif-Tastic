@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GIPHY API</title>
+    <!--Link to reset css template -->
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <!-- Materialize Theme -->
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/css/materialize.min.css" crossorigin="anonymous">
+    <!-- Your style sheet link -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <!-- Google Fonts -->
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bungee|Russo+One" rel="stylesheet">
+    <!-- Font awesome CDN -->
+    <script src="https://use.fontawesome.com/9763ef17ba.js"></script>
+</head>
+<body>
+<!-- ===========START  OF HTML CONTENT =================== -->
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col s12 m3 l4">
+                    <div class="valign-wrapper">
+                        <img src="assets/images/giphy.gif" class="headerImage valign" id="image">
+                    </div>
+                </div>
+                <div class="col s12 m6 l4">
+                    <div class="valign-wrapper">
+                        <h1 class="center-align valign"> RockStar Lookup </h1>
+                    </div>
+                </div>
+                <div class="input-field col s12 m3 l4">
+                    <label for="star-input">Choose Your Star</label>
+                    <input type="text" id="star-input">
+                    <br>
+                    <!-- Button triggers new movie to be added -->
+                    <button class="waves-effect waves-light btn orange darken-1 z-depth-5" id="addStar" type="button" value="Add Your Celebrity">Add Your Star</button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- TO HOUSE THE BUTTONS -->
+    <div class="container">
+        <div class="row" id="buttonsView">
+            <!-- Hard coded at first -->
+            <!-- Dynamically update them to display and add class of col m1 to be in one column -->            
+         <!-- A divider above where the images go -->
+        <div class="divider"></div>
+    </div>
+   <!-- WHERE THE IMAGES WILL RENDER -->
+  <div class="row bodyPic" id="gifsAppearHere">
+  <!-- Hardcoded this type of html to be dynamically updated -->  
+    </div>
+<!-- ===========END OF HTML CONTENT =================== -->
+<!-- Templating, still working on this piece -->
+      <script type="text/template" id="giphyTmpl">
+            <div class="col s12 m4 l3">
+                <div class="card">
+                    <div class="card-image">
+                        <img src="<%= result.images.fixed_height_small_still.url %>" data-still="<%= result.images.fixed_height_small_still.url %>" data-animate="<%= result.images.fixed_height_small.url %>" data-state="still">
+                    </div>
+                    <div class="card-content"><p class="rate"> Rating: <%= result.rating %></p>
+                    </div>
+                </div>
+            </div>
+    </script>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <!-- Compiled and minified JavaScrip for Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.7/js/materialize.min.js"></script>
+    <!-- underscore JS library CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!-- link to user JS file. -->
+    <script type="text/javascript" src="assets/javascript/app.js"></script>
+    
+    </script>
+
+</body>
+</html>

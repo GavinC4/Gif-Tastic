@@ -1,0 +1,53 @@
+h1 {
+	font-family: 'Russo One', sans-serif;
+	color: white;
+	margin-left: 20px;	
+	margin-top: 50px;
+	font-size: 40px;
+	text-align: center;
+}
+header {
+	background-color: #18181A;
+	border-bottom: 2px solid grey;
+}
+nav { 
+	height: 92px;
+}
+label {
+ 	font-size: 20px;
+ 	font-weight: bolder;
+}
+input {
+ 	color: white;
+}
+button {
+	margin-top: 8px;
+	padding-right: 10px;
+	text-align: center;
+}
+.headerImage {
+	height: 140px;
+	width: 300px;
+}
+@keyframes myanimation
+{
+    0%, 50% {
+        margin-left: -500px;
+    }
+    100% {
+        margin-left: 0px;
+    }
+}
+#image {
+	animation: myanimation 2000ms ease; 
+}
+img {
+	height: 250px;
+	width: 300px;
+}
+.rate {
+	text-transform: uppercase;
+}
+.container {
+	width: 90%;
+}
